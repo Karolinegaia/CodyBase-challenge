@@ -6,19 +6,17 @@
           <div
             class="col"
             v-for="pokemon in filtered_pokemons"
-            :key="pokemon.name"
-          >
-            <Search/>
+            :key="pokemon.name">
+        
             <div class="card-name" @click="show_pokemon(get_id(pokemon))">
-              <div class="conatiner-pokemon">
-                {{ get_id(pokemon) }}
+              <div class="container-pokemon">                
                 <img
                   :src="`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${get_id(
                     pokemon
                   )}.png`"
                   alt="Karoline-Gaia"
-                />
-                <h2 class="text-center">{{ get_name(pokemon) }}</h2>
+                />                
+                <h2 class="text-center">{{ get_name(pokemon)}} KG</h2>
               </div>
             </div>
           </div>
@@ -31,8 +29,9 @@
           <v-row d-flex align-center>
             <v-col cols="8">
               <img
-                :src="`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${selected_pokemon.id}.png`"
+                :src="`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${get_id(pokemons)}}.png`"
                 alt="Karoline-Gaia"
+                width="80"
               />
             </v-col>
             <v-col cols="8">
@@ -53,9 +52,8 @@
                 Peso {{ selected_pokemon.weight * (0.45359237).toFixed(0) }} kg
               </v-chip>
             </v-col>
-          </v-row>
-          <h1>Moves</h1>
-          
+          </v-row>          
+          <h1>Moves</h1>          
         </v-container>
       </v-card>
     </v-dialog>
@@ -88,7 +86,7 @@ export default {
   },
   methods: {
     get_id(pokemon) {
-      return Number(pokemon.url.split("/")[6]);
+      return pokemon.url.split("/")[6];
     },
     get_name(pokemon) {
       return pokemon.name.charAt(0).toUpperCase() + pokemon.name.slice(1);

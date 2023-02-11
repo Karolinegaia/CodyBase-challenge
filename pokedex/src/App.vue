@@ -6,11 +6,10 @@ import Card from "./components/Card.vue"
 
 <template>  
   <div id="app">
-    <Header/>         
+    <Header/>
+    <Card/>         
     <Footer/>
-  </div>
-  
-    
+  </div> 
     
     
 </template>
