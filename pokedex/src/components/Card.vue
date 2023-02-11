@@ -28,21 +28,19 @@
         </div>
       </div>
     </div>
-    <v-dialog width="800">
+    <v-dialog v-model="show_dialog" width="800">
       <v-card v-if="selected_pokemon">
-        <v-container>          
+        <v-container class="details">          
           <v-row d-flex align-center>
-            <v-col cols="8">
+            <v-col cols="4">
               <img
-                :src="`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${get_id(
-                  pokemons
-                )}.png`"
+                :src="`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${selected_pokemon.id}.png`"
                 alt="Karoline-Gaia"
-                width="80"
+                width="150"
               />
             </v-col>
             <v-col cols="8">
-              <h1>{{ get_name(selected_pokemon) }}</h1>
+              <h1>{{ get_name(selected_pokemon)}}- Karol Gaia</h1>
               <v-chip
                 label
                 v-for="type in selected_pokemon.types"
@@ -51,10 +49,11 @@
               >
                 {{ type.type.name }}
               </v-chip>
-              <v-divider class="my-4"></v-divider>
+              <v-divider class="my-4">
               <v-chip label>
                 Altura {{ selected_pokemon.height * 2.54 }} cm
               </v-chip>
+            </v-divider>
               <v-chip>
                 Peso {{ selected_pokemon.weight * (0.45359237).toFixed(0) }} kg
               </v-chip>
@@ -79,6 +78,7 @@ export default {
       search: "",
       show_dialog: false,
       selected_pokemon: null,
+      dialog: false,
     };
   },
 
