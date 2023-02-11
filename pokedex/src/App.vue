@@ -1,14 +1,16 @@
 <script setup>
 import Header from "./components/Header.vue"
 import Footer from "./components/Footer.vue"
+import Card from "./components/Card.vue"
 </script>
 
 <template>
+  <Header/>
   <main>
-    <Header/>
+    
+    <Card/>
     <Footer/>
-  </main>
-  
+  </main>  
 </template>
 
 
