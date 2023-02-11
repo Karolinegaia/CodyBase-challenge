@@ -1,35 +1,42 @@
 <template>
   <div class="container-card">
-    <div class="card">      
-      <div class="pokemons">
+    <div class="card">
+      <div class="pokemons">      
+        <div class="button">
+          <form >
+              <input class="search" placeholder="Busque seu Pokémon" v-model="search"/>        
+          </form>          
+      </div>
         <div class="row">
           <div
             class="col"
             v-for="pokemon in filtered_pokemons"
-            :key="pokemon.name">
-        
-            <div class="card-name" @click="show_pokemon(get_id(pokemon))">
-              <div class="container-pokemon">                
+            :key="pokemon.name"
+          >
+            <div class="card-name" >
+              <div class="container-pokemon" @click="show_pokemon(get_id(pokemon))">
                 <img
                   :src="`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${get_id(
                     pokemon
                   )}.png`"
                   alt="Karoline-Gaia"
-                />                
-                <h2 class="text-center">{{ get_name(pokemon)}} KG</h2>
+                />
+                <h2 class="text-center">{{ get_name(pokemon) }} KG</h2>
               </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-    <v-dialog v-model="show_dialog" width="800">
+    <v-dialog width="800">
       <v-card v-if="selected_pokemon">
-        <v-container>
+        <v-container>          
           <v-row d-flex align-center>
             <v-col cols="8">
               <img
-                :src="`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${get_id(pokemons)}}.png`"
+                :src="`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${get_id(
+                  pokemons
+                )}.png`"
                 alt="Karoline-Gaia"
                 width="80"
               />
@@ -52,8 +59,8 @@
                 Peso {{ selected_pokemon.weight * (0.45359237).toFixed(0) }} kg
               </v-chip>
             </v-col>
-          </v-row>          
-          <h1>Moves</h1>          
+          </v-row>
+          <h1>Moves</h1>
         </v-container>
       </v-card>
     </v-dialog>
@@ -61,9 +68,7 @@
 </template>
 
 <script>
-
 import axios from "axios";
-
 
 export default {
   name: "App",
@@ -97,7 +102,6 @@ export default {
         this.show_dialog = !this.show_dialog;
       });
     },
-   
   },
   computed: {
     filtered_pokemons() {
