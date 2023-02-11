@@ -1,12 +1,12 @@
 <template>
+  <div class="button">
+    <form>
+        <input class="search" placeholder="Busque seu Pokémon" v-model="search"/>        
+    </form>          
+</div>
   <div class="container-card">
     <div class="card">
-      <div class="pokemons">      
-        <div class="button">
-          <form >
-              <input class="search" placeholder="Busque seu Pokémon" v-model="search"/>        
-          </form>          
-      </div>
+      <div class="pokemons">        
         <div class="row">
           <div
             class="col"

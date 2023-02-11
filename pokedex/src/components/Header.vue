@@ -34,21 +34,17 @@ export default {
     get_name(pokemon) {
       return pokemon.name.charAt(0).toUpperCase() + pokemon.name.slice(1);
     },
-  //   show_pokemon(id) {
-  //     axios.get(`https://pokeapi.co/api/v2/pokemon/${id}`).then((response) => {
-  //       this.selected_pokemon = response.data;
-  //       this.show_dialog = !this.show_dialog;
-  //     });
-  //   },
-  // },
-  computed: {
+ 
+  
+  },
+
+computed: {
     filtered_pokemons() {
       return this.pokemons.filter((item) => {
         return item.name.includes(this.search);
       });
     },
   },
-},
 }
 </script>
 
