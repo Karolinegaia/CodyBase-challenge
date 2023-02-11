@@ -4,7 +4,7 @@
 <br>
 
 <p align="center">
-    <img width="300px" src="./public/pokedex.png">
+    <img width="300px" src="./pokedex/public/pokedex.png">
 </p>
 
 <br><br>
@@ -113,13 +113,13 @@ npm run dev
 <br>
 
 <p align="center">
-    <img width="300px" src="./public/print1.png">
+    <img width="300px" src="./pokedex/public/print1.png">
 </p>
 
 <br>
 
 <p align="center">
-    <img width="300px" src="./public/print2.png">
+    <img width="300px" src="./pokedex/public/print2.png">
 </p>
 
 <br>
