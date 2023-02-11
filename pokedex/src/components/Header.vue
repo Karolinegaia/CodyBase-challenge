@@ -1,6 +1,6 @@
 <template>
   <div class="title">
-    <img src="pokedex.png" alt="pokedex" />
+    <img src="../../public/pokedex.png" alt="pokedex" />
     <h1>Pokedex</h1>
   </div>
    
