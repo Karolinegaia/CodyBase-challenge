@@ -4,13 +4,15 @@ import Footer from "./components/Footer.vue"
 import Card from "./components/Card.vue"
 </script>
 
-<template>
-  <Header/>
-  <main>
-    
-    <Card/>
+<template>  
+  <div id="app">
+    <Header/>         
     <Footer/>
-  </main>  
+  </div>
+  
+    
+    
+    
 </template>
 
 

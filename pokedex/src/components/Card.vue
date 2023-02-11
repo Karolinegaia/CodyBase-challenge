@@ -1,8 +1,6 @@
 <template>
   <div class="container-card">
-    <div class="card">
-      <v-text-field v-model="search" placeholder="Busque seu Pokémon" solo>
-      </v-text-field>
+    <div class="card">      
       <div class="pokemons">
         <div class="row">
           <div
@@ -10,6 +8,7 @@
             v-for="pokemon in filtered_pokemons"
             :key="pokemon.name"
           >
+            <Search/>
             <div class="card-name" @click="show_pokemon(get_id(pokemon))">
               <div class="conatiner-pokemon">
                 {{ get_id(pokemon) }}
@@ -30,7 +29,7 @@
       <v-card v-if="selected_pokemon">
         <v-container>
           <v-row d-flex align-center>
-            <v-col cols="4">
+            <v-col cols="8">
               <img
                 :src="`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${selected_pokemon.id}.png`"
                 alt="Karoline-Gaia"
@@ -64,6 +63,7 @@
 </template>
 
 <script>
+
 import axios from "axios";
 
 
